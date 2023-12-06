@@ -5,6 +5,9 @@ import java.util.Random;
 
 public class Prodotto {
  //ATTRIBUTI
+
+    //public String categoryName;
+    //public String categoryDescription;
     private int code ;
     private String name ;
     private String description;
@@ -14,6 +17,9 @@ public class Prodotto {
     //COSTRUTTORI
 
     public Prodotto (String name, String description, Double price, int iva){
+       //this.category = categoryName;
+       //this.categoryDescription = ;
+
       this.code = getRandomCode();
       this.name = name;
       this.description = description;
@@ -83,6 +89,16 @@ public class Prodotto {
 
     public String getProductInfoIva () {
         String infoProduct = code + " " + name + ": " + description + " " + " il prezzo del prodotto con iva è: " + getPriceIva();
+        return infoProduct;
+    }
+
+    public String getProductInfoFull () {
+        String infoProduct = code + name + ": " + description + " " + " il prezzo del prodotto è: " + price;
+        return infoProduct;
+    }
+
+    public String getProductInfoIvaFull () {
+        String infoProduct = code + name + ": " + description + " " + " il prezzo del prodotto con iva è: " + getPriceIva();
         return infoProduct;
     }
 

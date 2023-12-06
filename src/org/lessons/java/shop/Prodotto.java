@@ -6,8 +6,7 @@ import java.util.Random;
 public class Prodotto {
  //ATTRIBUTI
 
-    //public String categoryName;
-    //public String categoryDescription;
+    private Categoria category;
     private int code ;
     private String name ;
     private String description;
@@ -16,15 +15,13 @@ public class Prodotto {
 
     //COSTRUTTORI
 
-    public Prodotto (String name, String description, Double price, int iva){
-       //this.category = categoryName;
-       //this.categoryDescription = ;
-
+    public Prodotto (String name, String description, Double price, int iva, Categoria category){
       this.code = getRandomCode();
       this.name = name;
       this.description = description;
       this.price = price;
       this.iva = iva;
+      this.category = category;
     }
 
     //GETTER
@@ -50,6 +47,10 @@ public class Prodotto {
         return priceIva;
     }
 
+    public Categoria getCategory() {
+        return category;
+    }
+
     //SETTER
 
     public void setName(String name) {
@@ -71,6 +72,10 @@ public class Prodotto {
     public double price(){
         this.price = price;
         return price;
+    }
+
+    public void setCategory(Categoria category) {
+        this.category = category;
     }
 
     // METODI

@@ -16,6 +16,17 @@ public class Prodotto {
     //COSTRUTTORI
 
     public Prodotto (String name, String description, Double price, int iva, Categoria category){
+
+        if (name == null || name.isEmpty()){
+            throw new IllegalArgumentException("you have to write a valid name");
+        }
+        if (price < 0){
+            throw new IllegalArgumentException("price cannot be under 0");
+        }
+        if (iva < 0){
+            throw new IllegalArgumentException("iva cannot be under 0");
+        }
+
       this.code = getRandomCode();
       this.name = name;
       this.description = description;
@@ -106,6 +117,8 @@ public class Prodotto {
         String infoProduct = code + name + ": " + description + " " + " il prezzo del prodotto con iva è: " + getPriceIva();
         return infoProduct;
     }
+
+
 
 
 }

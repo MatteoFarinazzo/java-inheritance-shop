@@ -121,12 +121,12 @@ public class Prodotto {
     }
 
     public String getProductInfoFull () {
-        String infoProduct = code + name + ": " + description + " " + " il prezzo del prodotto è: " + price;
+        String infoProduct = code + " " + name + ": " + description + " " + " il prezzo del prodotto è: " + price;
         return infoProduct;
     }
 
     public String getProductInfoIvaFull () {
-        String infoProduct = code + name + ": " + description + " " + " il prezzo del prodotto con iva è: " + getPriceIva();
+        String infoProduct = code + " " + name + ": " + description + " " + " il prezzo del prodotto con iva è: " + getPriceIva();
         return infoProduct;
     }
 

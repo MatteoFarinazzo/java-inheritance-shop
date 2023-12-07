@@ -6,37 +6,55 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Quanti prodotti vuoi inserire nella lista?");
-        int productNumber = Integer.parseInt(scanner.nextLine());
+        int productNumber = 0;
+
+        boolean validNum = false;
+        while(!validNum) {
+            try {
+                System.out.println("Quanti prodotti vuoi inserire nella lista?");
+                productNumber = Integer.parseInt(scanner.nextLine());
+                validNum = true;
+            } catch (NumberFormatException e) {
+                System.out.println("This is not a number");
+            }
+        }
+
 
         Prodotto[] listOfProducts = new Prodotto[productNumber];
 
-        try {
             for (int i = 0; i < listOfProducts.length; i++) {
-                System.out.println("Inserisci il nome del prodotto");
-                String name = scanner.nextLine();
-                //Il nome del prodotto non può essere vuoto
 
-                System.out.println("Inserisci una descrizione del prodotto");
-                String description = scanner.nextLine();
-                System.out.println("Di che categoria fa parte tra le seguenti? Casalinghi, Bricolage, Sport, Informatica");
-                String categoryName = scanner.nextLine();
-                System.out.println("Inserisci il prezzo del prodotto");
-                Double price = Double.parseDouble(scanner.nextLine());
-                // Il prezzo non può essere negativo
+                    boolean isValid = false;
+                    while(!isValid){
+                        try {
+                                System.out.println("Inserisci il nome del prodotto");
+                                String name = scanner.nextLine();
+                                //Il nome del prodotto non può essere vuoto
 
-                System.out.println("Inserisci l'iva da applicare al prodotto");
-                int iva = Integer.parseInt(scanner.nextLine());
-                //L'iva non può essere negativa
+                                System.out.println("Inserisci una descrizione del prodotto");
+                                String description = scanner.nextLine();
+                                System.out.println("Di che categoria fa parte tra le seguenti? Casalinghi, Bricolage, Sport, Informatica");
+                                String categoryName = scanner.nextLine();
+                                System.out.println("Inserisci il prezzo del prodotto");
+                                Double price = Double.parseDouble(scanner.nextLine());
+                                // Il prezzo non può essere negativo
 
-                Categoria categoria = new Categoria(categoryName);
-                Prodotto product = new Prodotto(name, description, price, iva, categoria);
-                listOfProducts[i]= product;
+                                System.out.println("Inserisci l'iva da applicare al prodotto");
+                                int iva = Integer.parseInt(scanner.nextLine());
+                                //L'iva non può essere negativa
+
+                                Categoria categoria = new Categoria(categoryName);
+                                Prodotto product = new Prodotto(name, description, price, iva, categoria);
+                                listOfProducts[i] = product;
+                                isValid = true;
+                        } catch (IllegalArgumentException e){
+                            System.out.println("This Data is invalid: " + e.getMessage());
+                        }
+                    }
+
 
             }
-        } catch (IllegalArgumentException e) {
-            System.out.println("This data is invalid: " + e.getMessage());;
-        }
+
 
 
 

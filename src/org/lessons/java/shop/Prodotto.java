@@ -65,7 +65,11 @@ public class Prodotto {
     //SETTER
 
     public void setName(String name) {
+        if (name == null || name.isEmpty()){
+            throw new IllegalArgumentException("you have to write a valid name");
+        } else{
         this.name = name;
+        }
     }
 
     public void setDescription(String description) {
@@ -73,11 +77,19 @@ public class Prodotto {
     }
 
     public void setPrice(Double price) {
+        if (price < 0){
+            throw new IllegalArgumentException("price cannot be under 0");
+        } else{
         this.price = price;
+        }
     }
 
     public void setIva(int iva) {
+        if (iva < 0){
+            throw new IllegalArgumentException("iva cannot be under 0");
+        } else {
         this.iva = iva;
+        }
     }
 
     public double price(){
@@ -117,8 +129,5 @@ public class Prodotto {
         String infoProduct = code + name + ": " + description + " " + " il prezzo del prodotto con iva è: " + getPriceIva();
         return infoProduct;
     }
-
-
-
 
 }

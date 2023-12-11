@@ -15,7 +15,7 @@ public class Prodotto {
 
     //COSTRUTTORI
 
-    public Prodotto (String name, String description, Double price, int iva, Categoria category){
+    public Prodotto (String name, String description, Double price, int iva, Categoria category) throws IllegalArgumentException{
 
         if (name == null || name.isEmpty()){
             throw new IllegalArgumentException("you have to write a valid name");
@@ -129,5 +129,6 @@ public class Prodotto {
         String infoProduct = code + " " + name + ": " + description + " " + " il prezzo del prodotto con iva è: " + getPriceIva();
         return infoProduct;
     }
+
 
 }

@@ -7,13 +7,17 @@ public class Cuffie extends Prodotto{
     // ATTRIBUTI
 
     private String Color;
-    private boolean wireless;
+    private String wireless;
 
     //Costruttore
-    public Cuffie(String name, String description, BigDecimal price, BigDecimal iva, Categoria category, String Color, boolean wireless) throws IllegalArgumentException {
+    public Cuffie(String name, String description, BigDecimal price, BigDecimal iva, Categoria category, String Color, String wireless) throws IllegalArgumentException {
         super(name, description, price, iva, category);
         this.Color= Color;
-        this.wireless = wireless;
+        if (wireless.equals("y")){
+            this.wireless = "wireless";
+        } else {
+            this.wireless = "not wireless";
+        }
     }
 
     public String getColor() {
@@ -24,11 +28,11 @@ public class Cuffie extends Prodotto{
         Color = color;
     }
 
-    public boolean isWireless() {
+    public String isWireless() {
         return wireless;
     }
 
-    public void setWireless(boolean wireless) {
+    public void setWireless(String wireless) {
         this.wireless = wireless;
     }
 }

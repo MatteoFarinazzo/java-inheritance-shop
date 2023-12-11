@@ -7,11 +7,16 @@ public class TV extends Prodotto{
     //Attributi
     private int pollici;
 
-    private boolean smart;
-    public TV(String name, String description, BigDecimal price, BigDecimal iva, Categoria category, int pollici, boolean smart) throws IllegalArgumentException {
+    private String smart;
+
+    public TV(String name, String description, BigDecimal price, BigDecimal iva, Categoria category, int pollici, String smart) throws IllegalArgumentException {
         super(name, description, price, iva, category);
         this.pollici = pollici;
-        this.smart = smart;
+        if (smart.equals("y")){
+            this.smart = "wireless";
+        } else {
+            this.smart = "not wireless";
+        }
     }
 
     public int getPollici() {
@@ -22,11 +27,11 @@ public class TV extends Prodotto{
         this.pollici = pollici;
     }
 
-    public boolean isSmart() {
+    public String isSmart() {
         return smart;
     }
 
-    public void setSmart(boolean smart) {
+    public void setSmart(String smart) {
         this.smart = smart;
     }
 }

@@ -11,6 +11,7 @@ public class TV extends Prodotto{
     public TV(String name, String description, BigDecimal price, BigDecimal iva, Categoria category, int pollici, boolean smart) throws IllegalArgumentException {
         super(name, description, price, iva, category);
         this.pollici = pollici;
+        this.smart = smart;
     }
 
     public int getPollici() {

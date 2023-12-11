@@ -1,5 +1,6 @@
 package org.lessons.java.shop;
 
+import java.math.BigDecimal;
 import java.util.Scanner;
 
 public class Main {
@@ -36,11 +37,11 @@ public class Main {
                     System.out.println("Di che categoria fa parte tra le seguenti? Casalinghi, Bricolage, Sport, Informatica");
                     String categoryName = scanner.nextLine();
                     System.out.println("Inserisci il prezzo del prodotto");
-                    Double price = Double.parseDouble(scanner.nextLine());
+                    BigDecimal price = BigDecimal.valueOf(Double.parseDouble(scanner.nextLine()));
                     // Il prezzo non può essere negativo
 
                     System.out.println("Inserisci l'iva da applicare al prodotto");
-                    int iva = Integer.parseInt(scanner.nextLine());
+                    BigDecimal iva = BigDecimal.valueOf(Integer.parseInt(scanner.nextLine()));
                     //L'iva non può essere negativa
 
                     Categoria categoria = new Categoria(categoryName);

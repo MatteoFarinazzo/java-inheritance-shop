@@ -1,5 +1,6 @@
 package org.lessons.java.shop;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Random;
 
@@ -10,22 +11,18 @@ public class Prodotto {
     private int code ;
     private String name ;
     private String description;
-    private Double price;
-    private int iva;
+    private BigDecimal price;
+    private BigDecimal iva;
 
     //COSTRUTTORI
 
-    public Prodotto (String name, String description, Double price, int iva, Categoria category) throws IllegalArgumentException{
+    public Prodotto (String name, String description, BigDecimal price, BigDecimal iva, Categoria category) throws IllegalArgumentException{
 
         if (name == null || name.isEmpty()){
             throw new IllegalArgumentException("you have to write a valid name");
         }
-        if (price < 0){
-            throw new IllegalArgumentException("price cannot be under 0");
-        }
-        if (iva < 0){
-            throw new IllegalArgumentException("iva cannot be under 0");
-        }
+        validatePrice(price);
+        validateVat(iva);
 
       this.code = getRandomCode();
       this.name = name;
@@ -50,11 +47,11 @@ public class Prodotto {
         this.description = description;
         return description;
     }
-    public Double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
-    public double getPriceIva() {
-        double priceIva = ((price * iva) / 100) + price;
+    public BigDecimal getPriceIva() {
+        BigDecimal priceIva = (price.multiply(iva)).divide(BigDecimal.valueOf(100)).add(price) ;
         return priceIva;
     }
 
@@ -76,25 +73,14 @@ public class Prodotto {
         this.description = description;
     }
 
-    public void setPrice(Double price) {
-        if (price < 0){
-            throw new IllegalArgumentException("price cannot be under 0");
-        } else{
+    public void setPrice(BigDecimal price) {
+        validatePrice(price);
         this.price = price;
-        }
     }
 
-    public void setIva(int iva) {
-        if (iva < 0){
-            throw new IllegalArgumentException("iva cannot be under 0");
-        } else {
+    public void setIva(BigDecimal iva) {
+        validateVat(iva);
         this.iva = iva;
-        }
-    }
-
-    public double price(){
-        this.price = price;
-        return price;
     }
 
     public void setCategory(Categoria category) {
@@ -128,6 +114,19 @@ public class Prodotto {
     public String getProductInfoIvaFull () {
         String infoProduct = code + " " + name + ": " + description + " " + " il prezzo del prodotto con iva è: " + getPriceIva();
         return infoProduct;
+    }
+
+    private void validatePrice(BigDecimal price) throws IllegalArgumentException{
+        if(price == null || price.compareTo(new BigDecimal(0)) < 0){
+            // prezzo negativo
+            throw new IllegalArgumentException("price cannot be under 0");
+        }
+    }
+
+    private void validateVat(BigDecimal iva) throws IllegalArgumentException{
+        if(iva == null || iva.compareTo(new BigDecimal(0))< 0){
+            throw new IllegalArgumentException("iva cannot be under 0");
+        }
     }
 
 

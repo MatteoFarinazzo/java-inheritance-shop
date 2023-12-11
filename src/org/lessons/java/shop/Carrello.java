@@ -18,10 +18,11 @@ public class Carrello {
             System.out.println("Aggiungere un prodotto? y/n");
             String responseAdd = scanner.nextLine();
 
-            switch (responseAdd) {
-                case "y":
+                if (responseAdd.equals("y")) {
+
                     System.out.println("Indica che tipo di prodotto è tra: Smartphone, TV, Cuffie");
                     String typeOfProduct = scanner.nextLine();
+
                     if (typeOfProduct.equals("Smartphone")) {
                         System.out.println("Inserisci il nome del prodotto");
                         String name = scanner.nextLine();
@@ -59,6 +60,7 @@ public class Carrello {
                         Categoria categoria = new Categoria(categoryName);
                         Prodotto product = new TV(name, description, price, iva, categoria, pollici, smart);
                         listOfProducts.add(String.valueOf(product));
+
                     } else if (typeOfProduct.equals("Cuffie")) {
                         System.out.println("Inserisci il nome del prodotto");
                         String name = scanner.nextLine();
@@ -96,12 +98,14 @@ public class Carrello {
                         Prodotto product = new Prodotto(name, description, price, iva, categoria);
                     }
 
-                case "n":
+                }else{
                     System.out.println("ok, I tuoi prodotti sono");
                     System.out.println(listOfProducts);
                     wantInsert = true;
             }
         }
+
+
 
 
         scanner.close();

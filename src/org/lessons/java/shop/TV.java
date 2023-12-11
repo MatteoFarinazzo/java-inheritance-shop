@@ -13,9 +13,9 @@ public class TV extends Prodotto{
         super(name, description, price, iva, category);
         this.pollici = pollici;
         if (smart.equals("y")){
-            this.smart = "wireless";
+            this.smart = "smart";
         } else {
-            this.smart = "not wireless";
+            this.smart = "not smart";
         }
     }
 

@@ -111,7 +111,7 @@ public class Prodotto {
         return infoProduct;
     }
 
-    public String getProductInfoIvaFull () {
+    public String toString () {
         String infoProduct = code + " " + name + ": " + description + " " + " il prezzo del prodotto con iva è: " + getPriceIva();
         return infoProduct;
     }

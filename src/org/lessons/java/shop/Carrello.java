@@ -9,7 +9,7 @@ public class Carrello {
 
         Scanner scanner = new Scanner(System.in);
 
-        ArrayList<String> listOfProducts = new ArrayList<>();
+        ArrayList<Prodotto> listOfProducts = new ArrayList<>();
 
 
         boolean wantInsert = false;
@@ -39,7 +39,7 @@ public class Carrello {
 
                         Categoria categoria = new Categoria(categoryName);
                         Prodotto product = new Smartphone(name, description, price, iva, categoria, storage);
-                        listOfProducts.add(String.valueOf(product));
+                        listOfProducts.add(product);
 
                     } else if (typeOfProduct.equals("TV")) {
                         System.out.println("Inserisci il nome del prodotto");
@@ -59,7 +59,7 @@ public class Carrello {
 
                         Categoria categoria = new Categoria(categoryName);
                         Prodotto product = new TV(name, description, price, iva, categoria, pollici, smart);
-                        listOfProducts.add(String.valueOf(product));
+                        listOfProducts.add(product);
 
                     } else if (typeOfProduct.equals("Cuffie")) {
                         System.out.println("Inserisci il nome del prodotto");
@@ -79,7 +79,7 @@ public class Carrello {
 
                         Categoria categoria = new Categoria(categoryName);
                         Prodotto product = new Cuffie(name, description, price, iva, categoria, color, wireless);
-                        listOfProducts.add(String.valueOf(product));
+                        listOfProducts.add(product);
 
                     } else {
                         System.out.println("Inserisci il nome del prodotto");
@@ -96,6 +96,7 @@ public class Carrello {
                         BigDecimal iva = BigDecimal.valueOf(Integer.parseInt(scanner.nextLine()));
                         Categoria categoria = new Categoria(categoryName);
                         Prodotto product = new Prodotto(name, description, price, iva, categoria);
+                        listOfProducts.add(product);
                     }
 
                 }else{
@@ -104,6 +105,14 @@ public class Carrello {
                     wantInsert = true;
             }
         }
+
+        System.out.println("I prodotti nel tuo carrello sono:");
+
+        for (Prodotto prodotto: listOfProducts) {
+            System.out.println(prodotto);
+
+        }
+
 
 
 

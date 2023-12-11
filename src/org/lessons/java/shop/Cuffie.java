@@ -28,11 +28,23 @@ public class Cuffie extends Prodotto{
         Color = color;
     }
 
+    public String getWireless() {
+        return wireless;
+    }
+
     public String isWireless() {
         return wireless;
     }
 
     public void setWireless(String wireless) {
         this.wireless = wireless;
+    }
+
+    //Metodi
+
+    @Override
+    public String toString () {
+        String infoProduct = getCode() + " " + getName() + "di colore " + getColor() + "è "+ getWireless() + ": " + getDescription() + " " + " il prezzo del prodotto con iva è: " + getPriceIva();
+        return infoProduct;
     }
 }

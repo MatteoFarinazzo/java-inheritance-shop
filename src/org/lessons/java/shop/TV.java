@@ -23,6 +23,10 @@ public class TV extends Prodotto{
         return pollici;
     }
 
+    public String getSmart() {
+        return smart;
+    }
+
     public void setPollici(int pollici) {
         this.pollici = pollici;
     }
@@ -33,5 +37,13 @@ public class TV extends Prodotto{
 
     public void setSmart(String smart) {
         this.smart = smart;
+    }
+
+    //Metodi
+
+    @Override
+    public String toString () {
+        String infoProduct = getCode() + " " + getName() + "ha " + getPollici() + "è "+ getSmart() + ": " + getDescription() + " " + " il prezzo del prodotto con iva è: " + getPriceIva();
+        return infoProduct;
     }
 }

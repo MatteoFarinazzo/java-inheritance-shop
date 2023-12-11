@@ -61,10 +61,10 @@ public class Main {
             /*System.out.println(listOfProducts[i].getProductInfo());
             System.out.println(listOfProducts[i].getProductInfoIva());
             System.out.println(listOfProducts[i].getProductInfoFull());*/
-            System.out.println(listOfProducts[i].getProductInfoIvaFull());
-
-            Categoria category = listOfProducts[i].getCategory();
-            System.out.println(category.getCategoryName() + " : " + category.getItemDescription());
+//            System.out.println(listOfProducts[i].getProductInfoIvaFull());
+//
+//            Categoria category = listOfProducts[i].getCategory();
+//            System.out.println(category.getCategoryName() + " : " + category.getItemDescription());
         }
 
 

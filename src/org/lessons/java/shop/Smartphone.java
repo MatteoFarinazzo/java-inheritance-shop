@@ -39,4 +39,11 @@ public class Smartphone extends Prodotto {
        int num = random.nextInt(1000000, 9999999);
        return num;
     }
+
+    //Metodi
+    @Override
+    public String toString () {
+        String infoProduct = getCode() + " " + getName() + "codice IMEI: "+ getCodiceImei() + "ram da " + getStorage() + ": " + getDescription() + " " + " il prezzo del prodotto con iva è: " + getPriceIva();
+        return infoProduct;
+    }
 }

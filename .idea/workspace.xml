@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68a5eef-ba96-4782-9a56-381d659ef5cd" name="Changes" comment="fixed ciclo">
+    <list default="true" id="e68a5eef-ba96-4782-9a56-381d659ef5cd" name="Changes" comment="almost done">
       <change beforePath="$PROJECT_DIR$/src/org/lessons/java/shop/Carrello.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/lessons/java/shop/Carrello.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/lessons/java/shop/Cuffie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/lessons/java/shop/Cuffie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/lessons/java/shop/Prodotto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/lessons/java/shop/Prodotto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/lessons/java/shop/Smartphone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/lessons/java/shop/Smartphone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/lessons/java/shop/TV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/lessons/java/shop/TV.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +172,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702312224316</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="almost done">
+      <option name="closed" value="true" />
+      <created>1702313759691</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1702313759691</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -201,6 +206,7 @@
     <MESSAGE value="working on Carrello" />
     <MESSAGE value="still working" />
     <MESSAGE value="fixed ciclo" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed ciclo" />
+    <MESSAGE value="almost done" />
+    <option name="LAST_COMMIT_MESSAGE" value="almost done" />
   </component>
 </project>

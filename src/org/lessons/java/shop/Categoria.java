@@ -37,7 +37,7 @@ public class Categoria {
         } else if (categoryName.equals("Casalinghi")){
             categoryDescription =  "Prodotti per i lavori domestici, cura della casa o arredamento";
         } else if (categoryName.equals("Sport")){
-            categoryDescription = "Prodotti per la èpratica sportiva";
+            categoryDescription = "Prodotti per la pratica sportiva";
         } else if (categoryName.equals("Informatica")){
             categoryDescription = "Prodotti tecnologici";
         } else {

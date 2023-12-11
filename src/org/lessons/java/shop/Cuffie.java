@@ -44,7 +44,7 @@ public class Cuffie extends Prodotto{
 
     @Override
     public String toString () {
-        String infoProduct = getCode() + " " + getName() + "di colore " + getColor() + "è "+ getWireless() + ": " + getDescription() + " " + " il prezzo del prodotto con iva è: " + getPriceIva();
+        String infoProduct = getCode() + " " + getName() + " di colore " + getColor() + " sono "+ getWireless() + ": " + getDescription() + " " + " il prezzo del prodotto con iva è: " + getPriceIva();
         return infoProduct;
     }
 }

@@ -43,7 +43,7 @@ public class TV extends Prodotto{
 
     @Override
     public String toString () {
-        String infoProduct = getCode() + " " + getName() + "ha " + getPollici() + "è "+ getSmart() + ": " + getDescription() + " " + " il prezzo del prodotto con iva è: " + getPriceIva();
+        String infoProduct = getCode() + " " + getName() + " ha " + getPollici() + " è "+ getSmart() + ": " + getDescription() + " " + " il prezzo del prodotto con iva è: " + getPriceIva();
         return infoProduct;
     }
 }

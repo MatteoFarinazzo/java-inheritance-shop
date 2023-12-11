@@ -99,17 +99,21 @@ public class Carrello {
                         listOfProducts.add(product);
                     }
 
-                }else{
-                    System.out.println("ok, I tuoi prodotti sono");
-                    System.out.println(listOfProducts);
+                }else if(responseAdd.equals("n")){
+                    System.out.println("ok");
                     wantInsert = true;
-            }
+                } else {
+                    System.out.println("La risposta non è valida");
+                }
         }
 
         System.out.println("I prodotti nel tuo carrello sono:");
 
         for (Prodotto prodotto: listOfProducts) {
+            Categoria category = prodotto.getCategory();
+            System.out.println(category.getCategoryName() + " : " + category.getItemDescription());
             System.out.println(prodotto);
+
 
         }
 

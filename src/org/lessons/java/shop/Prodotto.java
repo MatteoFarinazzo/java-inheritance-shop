@@ -14,6 +14,8 @@ public class Prodotto {
     private BigDecimal price;
     private BigDecimal iva;
 
+    private String fidelityCard;
+
     //COSTRUTTORI
 
     public Prodotto (String name, String description, BigDecimal price, BigDecimal iva, Categoria category) throws IllegalArgumentException{
@@ -59,6 +61,7 @@ public class Prodotto {
         return category;
     }
 
+
     //SETTER
 
     public void setName(String name) {
@@ -85,6 +88,10 @@ public class Prodotto {
 
     public void setCategory(Categoria category) {
         this.category = category;
+    }
+
+    public void setFidelityCard(String fidelityCard) {
+        this.fidelityCard = fidelityCard;
     }
 
     // METODI
@@ -126,6 +133,12 @@ public class Prodotto {
     private void validateVat(BigDecimal iva) throws IllegalArgumentException{
         if(iva == null || iva.compareTo(new BigDecimal(0))< 0){
             throw new IllegalArgumentException("iva cannot be under 0");
+        }
+    }
+
+    private void fidelityPrice(){
+        if (fidelityCard.equals("si")){
+
         }
     }
 

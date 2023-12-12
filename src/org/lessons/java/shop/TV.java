@@ -19,6 +19,7 @@ public class TV extends Prodotto{
         }
     }
 
+    //GETTER
     public int getPollici() {
         return pollici;
     }
@@ -27,6 +28,7 @@ public class TV extends Prodotto{
         return smart;
     }
 
+    //SETTER
     public void setPollici(int pollici) {
         this.pollici = pollici;
     }

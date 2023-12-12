@@ -20,17 +20,21 @@ public class Cuffie extends Prodotto{
         }
     }
 
+    // GETTER
+
     public String getColor() {
         return Color;
     }
+    public String getWireless() {
+        return wireless;
+    }
+
+    //SETTER
 
     public void setColor(String color) {
         Color = color;
     }
 
-    public String getWireless() {
-        return wireless;
-    }
 
     public String isWireless() {
         return wireless;

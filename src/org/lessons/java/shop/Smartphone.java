@@ -14,8 +14,10 @@ public class Smartphone extends Prodotto {
         super(name, description, price, iva, category);
         this.storage = storage;
 
-        codiceImei = randomImei();
+        this.codiceImei = randomImei();
     }
+
+    //GETTER
 
     public int getStorage(){
         return storage;
@@ -25,6 +27,7 @@ public class Smartphone extends Prodotto {
         return codiceImei;
     }
 
+    //SETTER
     public void setCodiceImei(int codiceImei) {
         this.codiceImei = codiceImei;
     }
@@ -40,10 +43,11 @@ public class Smartphone extends Prodotto {
        return num;
     }
 
+
     //Metodi
     @Override
     public String toString () {
-        String infoProduct = getCode() + " " + getName() + "codice IMEI: "+ getCodiceImei() + "ram da " + getStorage() + ": " + getDescription() + " " + " il prezzo del prodotto con iva è: " + getPriceIva();
+        String infoProduct = getCode() + " " + getName() + " codice IMEI: "+ getCodiceImei() + " ram da " + getStorage() + ": " + getDescription() + " " + " il prezzo del prodotto con iva è: " + getPriceIva();
         return infoProduct;
     }
 }
